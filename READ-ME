@@ -1,4 +1,5 @@
 CloudMart
+
 CloudMart is a containerized application deployed on Amazon EKS (Elastic Kubernetes Service). This README provides an overview of the project structure, deployment process, and important commands.
 Project Overview
 CloudMart is a frontend application containerized using Docker and deployed on Amazon EKS. The project uses AWS CodeBuild for continuous integration and deployment.
