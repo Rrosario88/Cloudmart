@@ -1,0 +1,36 @@
+CloudMart
+CloudMart is a containerized application deployed on Amazon EKS (Elastic Kubernetes Service). This README provides an overview of the project structure, deployment process, and important commands.
+Project Overview
+CloudMart is a frontend application containerized using Docker and deployed on Amazon EKS. The project uses AWS CodeBuild for continuous integration and deployment.
+Prerequisites
+
+AWS CLI configured with appropriate permissions
+Docker
+kubectl
+Access to an Amazon EKS cluster
+
+Project Structure
+Copy.
+├── Dockerfile
+├── buildspec.yml
+├── cloudmart-frontend.yaml
+└── [application files]
+
+Dockerfile: Defines the container image for the CloudMart frontend application.
+buildspec.yml: Contains the build specification for AWS CodeBuild.
+cloudmart-frontend.yaml: Kubernetes manifest for deploying the application to EKS.
+
+Build Process
+The build process is managed by AWS CodeBuild and defined in buildspec.yml. It includes the following phases:
+
+Install: Set up kubectl.
+Pre-build: Authenticate with Amazon ECR (Elastic Container Registry).
+Build: Build and tag the Docker image.
+Post-build: Push the Docker image to ECR and update the EKS deployment.
+
+Deployment
+The application is deployed to Amazon EKS. The deployment process includes:
+
+Building the Docker image
+Pushing the image to Amazon ECR
+Updating the Kubernetes deployment on EKS
